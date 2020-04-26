@@ -57,7 +57,7 @@ export default function Select({
         );
 
         return (
-            <Card fullBleed className={getChildClass('card')}>
+            <Card className={getChildClass('card')} elevated fullBleed>
                 {cardContents}
             </Card>
         );

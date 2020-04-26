@@ -1,4 +1,4 @@
-export const predicates = [
+export const tableFields = [
     {
         displayValue: 'User Email',
         value: 'user_email',

@@ -26,8 +26,8 @@ export default function queryBuilder(formValues) {
             `LOWER(${field}) LIKE '${value.toLowerCase()}%'`,
     };
 
-    const whereStatements = map(formValues, ({operator, predicate, searchValue}) => {
-        return sqlFieldFunctions[operator](predicate, searchValue);
+    const whereStatements = map(formValues, ({operator, tableField, searchValue}) => {
+        return sqlFieldFunctions[operator](tableField, searchValue);
     });
 
     return `SELECT * FROM session WHERE\n\t${whereStatements.join(' AND\n\t')}`;

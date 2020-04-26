@@ -31,7 +31,12 @@ export default function Modal({className, children, fullBleed, onClose, open}) {
         <div className={rootClassName}>
             <div className={getChildClass('overlay')} />
             <div className={getChildClass('container')}>
-                <Card className={getChildClass('card')} fullBleed cardRef={thisRef}>
+                <Card
+                    cardRef={thisRef}
+                    className={getChildClass('card')}
+                    elevated
+                    fullBleed
+                >
                     <ButtonClose
                         className={getChildClass('close')}
                         onClick={handleClick}

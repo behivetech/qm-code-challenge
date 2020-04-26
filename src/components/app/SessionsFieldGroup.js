@@ -11,7 +11,7 @@ import TextField from '../core/TextField';
 import getClassName from '../../tools/getClassName';
 import {
     numberOperators,
-    predicates,
+    tableFields,
     stringOperators,
 } from '../../configs/sessionFormValues';
 
@@ -43,9 +43,9 @@ export default function SessionsFieldGroup({
         dispatchState,
     ] = useReducer(reducer, INITIAL_STATE);
 
-    const {predicateName, operatorName, searchValueName} = useMemo(
+    const {tableFieldName, operatorName, searchValueName} = useMemo(
         () => ({
-            predicateName: `${groupName}.predicate`,
+            tableFieldName: `${groupName}.tableField`,
             operatorName: `${groupName}.operator`,
             searchValueName: `${groupName}.searchValue`,
         }),
@@ -61,11 +61,11 @@ export default function SessionsFieldGroup({
 
     // Since SQL code uses AND, limiting the pridicates to what isn't selected.
     const getPredicateOptions = useCallback(() => {
-        const usedPredicates = map(watch({nest: true}), ({predicate}) => {
-            return predicate;
+        const usedPredicates = map(watch({nest: true}), ({tableField}) => {
+            return tableField;
         });
 
-        return predicates.filter(({value}) => !usedPredicates.includes(value));
+        return tableFields.filter(({value}) => !usedPredicates.includes(value));
     }, [watch]);
 
     const setPredicate = useCallback(
@@ -76,7 +76,7 @@ export default function SessionsFieldGroup({
                 selectedPredicate: selectedItem,
             };
 
-            setDisableAnd(Object.keys(watch({nest: true})).length === predicates.length);
+            setDisableAnd(Object.keys(watch({nest: true})).length === tableFields.length);
 
             if (newOperatorType !== operatorType) {
                 setValue([{[searchValueName]: ''}]);
@@ -166,7 +166,7 @@ export default function SessionsFieldGroup({
 
     function handleCloseButtonClick(event) {
         event.preventDefault();
-        [predicateName, operatorName, searchValueName].map((name) => unregister(name));
+        [tableFieldName, operatorName, searchValueName].map((name) => unregister(name));
         onClose(groupName);
     }
 
@@ -193,7 +193,7 @@ export default function SessionsFieldGroup({
                 <Select
                     className={getChildClass('field')}
                     inputRef={register}
-                    name={predicateName}
+                    name={tableFieldName}
                     onChange={handlePredicatesChange}
                     getOptions={getPredicateOptions}
                     selected={selectedPredicate}

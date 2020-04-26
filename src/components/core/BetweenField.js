@@ -38,6 +38,7 @@ export default function BetweenField({
             <TextField type="number" onChange={handleSecondChange} rightAligned />
             <input
                 {...props}
+                onChange={onChange}
                 name={name}
                 ref={inputRef}
                 type="hidden"
@@ -47,3 +48,20 @@ export default function BetweenField({
         </div>
     );
 }
+
+BetweenField.propTypes = {
+    className: PropTypes.string,
+    /** Displays an error if set */
+    error: PropTypes.object,
+    inputRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+    /** Name on input */
+    name: PropTypes.string,
+    /** Callback function when input has a change */
+    onChange: PropTypes.func,
+    /** Sets the text in the text fields right aligned */
+    rightAligned: PropTypes.bool,
+};
+
+BetweenField.defaultProps = {
+    onChange: () => null,
+};
