@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.card {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $shape-medium-component-radius;
+    padding: 1.2rem 0.9rem;
+
+    &--no-padding {
+        padding: 0;
+    }
+}

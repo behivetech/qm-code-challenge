@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.select-list-item {
+    &__li-button {
+        background-color: transparent;
+        border: none;
+        color: $color-on-surface;
+        cursor: pointer;
+        font-size: 0.8rem;
+        margin: 0;
+        outline: none;
+        padding: 0.4rem 0.8rem;
+        text-align: left;
+        width: 100%;
+    }
+}

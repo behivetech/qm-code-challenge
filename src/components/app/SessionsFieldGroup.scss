@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.sessions-field-group {
+    display: flex;
+    z-index: 0;
+
+    &__group {
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: row nowrap;
+    }
+
+    &__field {
+        flex: 0 1 33%;
+        margin-left: 0.6rem;
+    }
+
+    &__remove {
+        flex: 0 0 auto;
+        margin: 0 -0.4rem;
+    }
+}

@@ -1,26 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import SessionsForm from './components/app/SessionsForm';
+
+import getClassName from './tools/getClassName';
+
+import './App.scss';
+
+export default function App() {
+    const [rootClassName] = getClassName({rootClass: 'app'});
+
+    return (
+        <main className={rootClassName}>
+            <SessionsForm />
+        </main>
+    );
 }
-
-export default App;

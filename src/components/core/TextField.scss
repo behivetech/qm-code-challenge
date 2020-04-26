@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.text-field {
+    position: relative;
+
+    &__error {
+        bottom: -1rem;
+        color: $color-error;
+        font-size: 0.6875rem;
+        position: absolute;
+    }
+
+    &__input {
+        border: 1px solid $color-border;
+        border-radius: $shape-small-component-radius;
+        box-sizing: border-box;
+        color: $color-on-surface;
+        font-size: 0.8rem;
+        line-height: 1.8rem;
+        padding: 0 0.5rem;
+        text-align: left;
+        width: 100%;
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+    }
+
+    &--right-aligned {
+        .text-field {
+            &__input {
+                text-align: right;
+            }
+        }
+    }
+}

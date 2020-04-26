@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.select {
+    cursor: pointer;
+    position: relative;
+
+    &__card {
+        box-sizing: border-box;
+        min-width: 100%;
+        min-height: 2rem;
+        padding: 0.4rem 0;
+        position: absolute;
+        top: 2rem;
+        z-index: $z-index-select;
+    }
+
+    &__ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__no-options {
+        padding: 0.5rem;
+        color: $color-on-disabled;
+    }
+}

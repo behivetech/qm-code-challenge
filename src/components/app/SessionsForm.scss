@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.sessions-form {
+    &__form-area {
+        min-height: 12rem;
+    }
+
+    &__button,
+    &__form-button,
+    &__field-group {
+        margin-top: 1rem;
+    }
+
+    &__form-button {
+        margin-right: 2rem;
+    }
+
+    &__hr {
+        border: 0;
+        border-top: 1px solid $color-border;
+        margin-top: 1rem;
+    }
+}

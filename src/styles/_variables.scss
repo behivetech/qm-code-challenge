@@ -1,0 +1,21 @@
+$color-border: #c7d0db;
+$color-error: #900;
+$color-primary: #22a7f0;
+$color-primary-border: darken($color-primary, 4%);
+$color-on-primary: #fff;
+$color-secondary: #a9b5c6;
+$color-secondary-border: darken($color-secondary, 4%);
+$color-on-secondary: #fff;
+$color-disabled: lighten($color-secondary, 15%);
+$color-disabled-border: darken($color-disabled, 4%);
+$color-on-disabled: darken($color-disabled, 20%);
+$color-surface-main: #fbfbfb;
+$color-surface: #fff;
+$color-on-surface: #4a535f;
+$color-placeholder: #c7d0db;
+
+$shape-small-component-radius: 4px;
+$shape-medium-component-radius: 4px;
+
+$z-index-select: 5;
+$z-index-modal: 10;
