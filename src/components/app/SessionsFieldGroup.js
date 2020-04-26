@@ -120,6 +120,7 @@ export default function SessionsFieldGroup({
             }
         }
 
+        // This section could probably be better, but going with this for now
         if (selectedOperator) {
             const {placeholder, validation} = selectedOperator;
 
@@ -136,6 +137,11 @@ export default function SessionsFieldGroup({
                 if (selectedPredicate.value === 'user_email') {
                     propResults.placeholder = 'jane@email.com, john@eamil.com';
                 }
+            }
+
+            if (['containsString', 'startsWithString'].includes(selectedOperator.value)) {
+                // Remove extra validation when contains or starts with.
+                registerOptions = omit(registerOptions, ['pattern', 'validate']);
             }
 
             if (validation) {
