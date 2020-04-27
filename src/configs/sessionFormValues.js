@@ -67,14 +67,6 @@ const inListSettings = {
             value: /^\w+(,(| )\w+)*$/,
             message: 'Value must be separated by commas.',
         },
-        // validate: (value) => {
-        //     const result = (value.split(' ').length > 1 && value.split(',').length < 2)
-        //         ? undefined
-        //         : 'Values must be separated by commas';
-
-        //     console.log(result, value.split(' ').length, value.split(',').length)
-        //     return result;
-        // },
     },
 };
 
