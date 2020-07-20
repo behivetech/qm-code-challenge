@@ -1,6 +1,9 @@
 # QM Code Challenge
 
-Extra items to look for
+## Archiving 
+This was a code challenge presented by a potential client. This is only here as a code example. Archiving since it was only a challenge and will no longer put any more developement into it. 
+
+## Extra items to look for
 
 -   validation which changes based on which field type is chosen
 -   limiting the field types as more fields are added to the interface since each of these are sepearated by AND which would mean using the same field type twice would result in no results
